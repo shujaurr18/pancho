@@ -1,0 +1,102 @@
+body{
+    min-width: $min-body-width;
+    &.nav-shown{
+        overflow: hidden !important;
+    }
+    /* For Chrome, Safari, and Opera */
+    ::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #000 #000;
+}
+
+}
+.nk{
+    &-body{
+        outline: none;
+    }
+    &-app{
+        &-root{
+            outline: none;
+        }
+    }
+    &-main{
+        position: relative;
+    } 
+    &-wrap{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    &-content{
+        padding:  0;
+        &-fs{
+            min-height: calc(100vh - (#{$header-height} + #{$header-height}));
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm){
+    .nk{
+        &-content{
+            padding: 0;
+            &-fluid{
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
+@include media-breakpoint-up(lg){
+    .nk{
+        &-content{
+            &-lg {
+                padding-top: ($content-gap-y * 1.5);
+                padding-bottom: ($content-gap-y * 1.5);
+            }
+            &-fluid{
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
+@media (min-width: 1660px){
+    .nk-content{
+        &-lg {
+            padding-top: ($content-gap-y * 2.25);
+            padding-bottom: ($content-gap-y * 2.25);
+        }
+        &-fluid{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+// Content
+.nk-content-body{
+    flex-grow: 1;
+}
+.nk-wrap-nosidebar{
+    .nk-content{
+        padding: 0 !important;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+}
