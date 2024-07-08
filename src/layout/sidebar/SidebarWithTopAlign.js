@@ -21,7 +21,7 @@ const SidebarWithTopAlign = ({ fixed, className }) => {
   });
   return (
     <>
-      <div className={classes} style={{top:0,height:'100vh'}}>
+      <div className={classes} >
         <SimpleBar className="nk-sidebar-inner">
           <Menu />
         </SimpleBar>

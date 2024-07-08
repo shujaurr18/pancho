@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 import { useTheme, useThemeUpdate } from '../provider/Theme';
 
-const Header = ({ fixed, className }) => {
+const Header = ({ fixed, className ,style}) => {
   const theme = useTheme();
   const themeUpdate = useThemeUpdate();
   const headerClass = classNames({
@@ -28,7 +28,7 @@ const Header = ({ fixed, className }) => {
     currentUrl = null;
   }
   return (
-    <div className={headerClass}>
+    <div className={headerClass} style={style}>
       <div className="container-fluid">
         <div className="nk-header-wrap">
           <div className="nk-menu-trigger d-xl-none ms-n1">

@@ -22,7 +22,10 @@ const NoHeaderNoFooterWithSidebar = ({title, app, ...props}) => {
           <AppMain>
             <SidebarWithTopAlign fixed />
             <AppWrapNoHeaderWithSideBar>
-              {/* <Header fixed /> */}
+              < >
+
+              <Header fixed style={{position:'absolute',zIndex:-9}}/>
+              </>
               <Outlet />
               {/* <Footer /> */}
             </AppWrapNoHeaderWithSideBar>
