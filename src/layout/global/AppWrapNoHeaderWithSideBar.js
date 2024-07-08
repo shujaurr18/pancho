@@ -1,9 +1,9 @@
 import React from 'react'
 import classNames from "classnames"
 
-function AppWrap({className,...props}) {
+function AppWrapNoHeaderWithSideBar({className,...props}) {
   const compClass = classNames({
-    "nk-wrap" : true,
+    "nk-wrap pt-0" : true,
     [`${className}`]: className,
   });
   return (
@@ -13,4 +13,4 @@ function AppWrap({className,...props}) {
   )
 }
 
-export default AppWrap
+export default AppWrapNoHeaderWithSideBar

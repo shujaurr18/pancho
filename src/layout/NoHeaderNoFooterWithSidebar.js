@@ -8,6 +8,8 @@ import Footer from "./footer/Footer";
 import AppRoot from "./global/AppRoot";
 import AppMain from "./global/AppMain";
 import AppWrap from "./global/AppWrap";
+import AppWrapNoHeaderWithSideBar from "./global/AppWrapNoHeaderWithSideBar";
+import SidebarWithTopAlign from "./sidebar/SidebarWithTopAlign";
 
 const NoHeaderNoFooterWithSidebar = ({title, app, ...props}) => {  
 
@@ -18,12 +20,12 @@ const NoHeaderNoFooterWithSidebar = ({title, app, ...props}) => {
         <AppRoot>
           <Appbar />
           <AppMain>
-            <Sidebar fixed />
-            <AppWrap>
-              <Header fixed />
+            <SidebarWithTopAlign fixed />
+            <AppWrapNoHeaderWithSideBar>
+              {/* <Header fixed /> */}
               <Outlet />
               {/* <Footer /> */}
-            </AppWrap>
+            </AppWrapNoHeaderWithSideBar>
           </AppMain>
         </AppRoot>
       </>

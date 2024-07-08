@@ -290,11 +290,7 @@ const Pages = () => {
 
         {/* /*------------------------------------------------------------------------------------------------ */}
         {/* No header no footer with sidebars */}
-        <Route
-          element={<NoHeaderNoFooterWithSidebar app={{ icon: "chat", theme: "bg-purple-dim", text: "Messages" }} />}
-        >
-          <Route path="noheaderwithside" element={<NoHeaderFooterPage />}></Route>
-        </Route>
+   
 
         {/* THESE ARE FOR PAGES THAT USE THE STANDARD THEME TEMPLATE MENU. JUST NEED TO COPY A LINE 
         AND WHEN ENTERING THE ELEMENT PART WHICH IS THE PAGE IN UPPER CASE I'LL LET VSCODE AUTO INSERT THE CORRESPONDING IMPORT LINE ABOVE, 
@@ -322,20 +318,26 @@ const Pages = () => {
             <Route path="settings" element={<FileManagerSettings />}></Route>
           </Route>
         </Route>
+{/* {NoHeaderNoFooterWithSidebar} */}
+      <Route
+          element={<NoHeaderNoFooterWithSidebar app={{ icon: "chat", theme: "bg-purple-dim", text: "Messages" }} />}
+        >
+          <Route path="noheaderwithside" element={<NoHeaderFooterPage />}></Route>
+        </Route>
       </Route>
-
       <Route path={`${process.env.PUBLIC_URL}`} element={<LayoutApp />}>
         <Route path="auth-success" element={<Success />}></Route>
         <Route path="auth-reset" element={<ForgotPassword />}></Route>
         <Route path="auth-register" element={<Register />}></Route>
         <Route path="auth-login" element={<Login />}></Route>
-
+   
         <Route path="errors">
           <Route path="404-modern" element={<Error404Modern />}></Route>
           <Route path="404-classic" element={<Error404Classic />}></Route>
           <Route path="504-modern" element={<Error504Modern />}></Route>
           <Route path="504-classic" element={<Error504Classic />}></Route>
         </Route>
+      
         <Route path="*" element={<Error404Modern />}></Route>
       </Route>
     </Routes>
